@@ -184,9 +184,13 @@ void CPTLNode::publish_spat(int it_, float tts)
 void CPTLNode::run()
 {  
   // Initialize CPTL signals
-  GPIO RED; GPIO AMBER, GREEN;   
+  GPIO RED;
+  GPIO AMBER;
+  GPIO GREEN;   
   signal (SIGINT, GPIO::interruptHandler);
-  if (RED.init(pin_order.at(2)) && AMBER.init(pin_order.at(1)) && GREEN.init(pin_order.at(0)))
+  if (RED.init(pin_order.at(2)) && 
+      AMBER.init(pin_order.at(1)) && 
+      GREEN.init(pin_order.at(0)))
     printf("%sSuccess:%s\tROS node and GPIO outputs initialized %s(Warming up...)\n%s",txtgreen,txtcolend,txtyellow,txtcolend);
   else
     printf("%sError:%s\tROS and GPIO nodes failed to initialize.\n",txtred,txtcolend);
@@ -204,6 +208,7 @@ void CPTLNode::run()
     {
       phase_timeout = false;
       phase_itr = get_next_phase(phase_itr);
+      GPIO::lightOn(pin_order.at(phase_itr));
       phase_timer_start();
     }
 
@@ -216,6 +221,7 @@ void CPTLNode::run()
     {
       phase_timer_stop();
       phase_timeout = true;
+      GPIO::lightOff(pin_order.at(phase_itr));
     }
 
   loop_rate.sleep();

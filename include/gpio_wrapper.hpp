@@ -35,8 +35,8 @@
 #include <algorithm>
 #include <signal.h>
 
-#define OFF 0
-#define ON 1
+#define OFF HIGH
+#define ON LOW
 std::vector<int> pins;
 
 class GPIO
@@ -52,8 +52,6 @@ public:
 			printf("Failed to setup BCM2835 GPIO interface!\n");
 			return false;
 		}
-		
-		
 		this->pin = pin_;
 		if (verify_pin())
 		{
@@ -66,28 +64,33 @@ public:
 		{
 			err_gpio_used(this->pin);
 			return false;
-			
 		}
 	}
-	
+	static void lightOff(int pin_)
+	{
+		bcm2835_gpio_write(pin_, OFF);
+	}	
 	void lightOff()
 	{
-		bcm2835_gpio_write(this->pin, LOW);
+		bcm2835_gpio_write(this->pin, OFF);
 	}	
+	static void lightOn(int pin_) 
+	{
+		bcm2835_gpio_write(pin_, ON);
+	}
 	void lightOn() 
 	{
-		bcm2835_gpio_write(this->pin, HIGH);
+		bcm2835_gpio_write(this->pin, ON);
 	}
 	static void allLightsOff() 
 	{
-		for (int i=0; i<pins.size()-1; i++)
-			bcm2835_gpio_write(pins.at(i), LOW);
-		bcm2835_gpio_write(pins.at(pins.size()-1), HIGH);
+		for (int i=0; i<pins.size(); i++)
+			bcm2835_gpio_write(pins.at(i), OFF);
 	}
 	static void interruptHandler(const int signal)
 	{
-		close();
 		allLightsOff();
+		close();
 		exit(0);
 	}
 	static void delay(int t_)
@@ -98,6 +101,7 @@ public:
 	{
 		bcm2835_close();
 	}
+
 private:
 	int pin;
 	bool status;
