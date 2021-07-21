@@ -8,9 +8,9 @@
     <arg name="duration_red_" value="10" />
     <arg name="duration_amber_" value="4" />
     <arg name="duration_green_" value="10" />
-    <arg name="gpio_out_red_" value="12" />
+    <arg name="gpio_out_red_" value="16" />
     <arg name="gpio_out_amber_" value="14" />
-    <arg name="gpio_out_green_" value="16" />
+    <arg name="gpio_out_green_" value="12" />
     <arg name="infra_latitude_" value= "0.0" />
     <arg name="infra_longitude_" value= "0.0" />
     <arg name="run_for_ever_" value="true" />
