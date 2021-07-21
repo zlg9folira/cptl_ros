@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cptl_ros</name>
+  <version>0.1.1</version>
+  <description>ROS driver for UB CAVAS connected portable traffic light (CPTL)</description>
+
+  <maintainer email="foadhaji@buffalo.edu">Foad Hajiaghajani</maintainer>
+  <license>MIT</license>
+  <url type="repository">https://github.com/zlg9folira/cptl_ros</url>
+  <author email="foadhaji@buffalo.edu">Foad Hajiaghajani</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>cavas_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <exec_depend>cavas_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <test_depend>roslaunch</test_depend>
+
+  <export>
+  </export>
+</package>

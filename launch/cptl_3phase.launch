@@ -1,0 +1,46 @@
+<launch>
+<!-- launch file for the cptl_ros package (3-phase CPTL hardware) -->
+
+<!-- Specify fixed parameters for CPTL hardware -->
+    <arg name="id_" value="0" />
+    <arg name="total_phase_number_" value="3" />
+    <arg name="infra_class_" value="vehicle" />
+    <arg name="duration_red_" value="10" />
+    <arg name="duration_amber_" value="4" />
+    <arg name="duration_green_" value="10" />
+    <arg name="gpio_out_red_" value="12" />
+    <arg name="gpio_out_amber_" value="14" />
+    <arg name="gpio_out_green_" value="16" />
+    <arg name="infra_latitude_" value= "0.0" />
+    <arg name="infra_longitude_" value= "0.0" />
+    <arg name="run_for_ever_" value="true" />
+    <arg name="topic_prefix_" value="/infra/cptl_" />
+    <arg name="topic_" value="$(arg topic_prefix_)$(arg id_)" />
+    <arg name="frame_" value="cptl" />
+
+
+<!-- Start 3phase CPTL ROS node -->
+
+  <node name="cptl_ros" pkg="cptl_ros" type="cptl_ros" output="screen">
+    <param name="infra_id" value="$(arg id_)"/>
+    <param name="phase_num" value="$(arg total_phase_number_)"/>
+    <param name="infra_class" value="$(arg infra_class_)"/>
+    <param name="topic_id" value="$(arg topic_)"/>
+    <param name="frame_id" value="$(arg frame_)"/>
+    <param name="infinit" value="$(arg run_for_ever_)"/>
+    <param name="latitude" value="$(arg infra_latitude_)"/>
+    <param name="longitude" value="$(arg infra_longitude_)"/>
+    
+<!-- GPIO pins for signal phase output -->
+    <param name="gpio_r" value="$(arg gpio_out_red_)"/>
+    <param name="gpio_a" value="$(arg gpio_out_amber_)"/>
+    <param name="gpio_g" value="$(arg gpio_out_green_)"/>
+
+<!-- SPaT setting -->
+    <param name="duration_red" value="$(arg duration_red_)"/>
+    <param name="duration_amber" value="$(arg duration_amber_)"/>
+    <param name="duration_green" value="$(arg duration_green_)"/>
+
+  </node>
+
+</launch>
