@@ -6,7 +6,7 @@ The `cptl_ros` package has been tested under ROS Kinethic and Melodic on Ubuntu 
 
 **Latest releases**: 
 
-| Driver version | CAVAS_ecosystem supported | CPTL hw supported |
+| Driver version | CAVAS_ecosystem supported | CPTL hw/sw supported |
 | :---:         | :---:     | :---: |
 | [v1.1](https://github.com/zlg9folira/cptl_ros/releases/tag/1.1)   | [v1.0](https://github.com/zlg9folira/CAVAS_ecosystem/releases/tag/v1.0) or newer   | V2.1 or newer   |
 | [v1.0](https://github.com/zlg9folira/cptl_ros/releases/tag/1.0)     | [v1.0](https://github.com/zlg9folira/CAVAS_ecosystem/releases/tag/v1.0) or newer       | V2.1 or newer  |
