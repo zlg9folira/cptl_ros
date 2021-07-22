@@ -26,7 +26,6 @@
 #include <ctime>
 #include <cmath>
 #include <thread>
-#include <wiringPi.h>
 #include "cptl_ros_driver.h"
 #include <std_msgs/Float64.h>
 
