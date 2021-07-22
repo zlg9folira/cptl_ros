@@ -79,7 +79,8 @@ roslaunch cptl_ros cptl_3phase.launch
  - `/infra/cptl_0` ([cavas_msgs/SPaT](https://github.com/zlg9folira/CAVAS_ecosystem/tree/main/cavas_msgs))
    containing global position, current phase, next phase, time to next phase, etc., for particular CPTL system.
 
-## Credit
+## Meta
+### Credit
 2021 - Foad Hajiaghajani - UB CAVAS
 
 
