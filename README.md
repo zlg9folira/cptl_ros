@@ -81,6 +81,6 @@ roslaunch cptl_ros cptl_3phase.launch
 
 ## Meta
 ### Credit:
-2021 - Foad Hajiaghajani - UB CAVAS
+Foad Hajiaghajani - UB CAVAS
 
 
