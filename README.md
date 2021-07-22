@@ -80,7 +80,7 @@ roslaunch cptl_ros cptl_3phase.launch
    containing global position, current phase, next phase, time to next phase, etc., for particular CPTL system.
 
 ## Meta
-### Credit
+### Credit:
 2021 - Foad Hajiaghajani - UB CAVAS
 
 
