@@ -4,7 +4,8 @@ ROS driver to manage and publish **Signal Phase and Timing (SPaT)** information 
 
 The `cptl_ros` package has been tested under ROS Kinethic and Melodic on Ubuntu 16.04, Ubuntu 18.04 and Raspberry Pi 64bit OS. The driver is compatible with Jetson Nano and Raspberry Pi 4B hardware.
 
-![cptl_ros_gif](https://user-images.githubusercontent.com/35779029/130538266-59671d60-c60a-4eb0-8bd5-5f598407536a.gif)
+![cptl_ros_gif](https://user-images.githubusercontent.com/35779029/130538787-93239243-2e5c-4a0e-9101-5745ff833f23.gif)
+<div style="text-align:center"><img src="https://user-images.githubusercontent.com/35779029/130538787-93239243-2e5c-4a0e-9101-5745ff833f23.gif" /></div>
 
 **Latest releases**: 
 
